@@ -249,7 +249,7 @@ footer .wrapper {
     transition: all 0.3s;
   }
 
-  .nav-list li:nth-child(-n + 3) {
+  .nav-list li:nth-child(-n + 4) {
     text-align: left;
     width: 100%;
     padding: 10px 30px;
@@ -264,3 +264,4 @@ footer .wrapper {
     right: 0;
   }
 }
+

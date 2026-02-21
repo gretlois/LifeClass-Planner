@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Funnel Display", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background: url(../Asset/hero-img.jpg) center / cover no-repeat;
+}
+
+/* Form Login in */
+
+.wrapper {
+  max-width: 720px;
+  margin: 100px auto;
+  background: #fff;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+.wrapper .box {
+  display: flex;
+}
+
+.box .form-details {
+  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background: url(../Asset/sign-in.jpeg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.wrapper .exit {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: black;
+}
+
+.box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.box .form-content {
+  width: 100%;
+  padding: 35px;
+}
+
+form .input-field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+form .input-field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding: 0 15px;
+}
+
+form .input-field label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  font-size: 12px;
+  transition: 0.2 ease;
+}
+
+.input-field input:focus ~ label,
+.input-field input:not(:placeholder-shown) ~ label {
+  transform: translateY(-120%);
+  font-size: 12px;
+  color: #54acbf;
+}
+
+.input-field input:focus,
+.input-field input:not(:placeholder-shown) {
+  padding: 16px 15px 0;
+}
+
+.input-field input:focus {
+  border-color: #54acbf;
+}
+
+.box a {
+  color: #54acbf;
+  text-decoration: none;
+}
+
+.box a:hover {
+  text-decoration: underline;
+}
+
+form button {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 0;
+  border-radius: 3px;
+  margin: 25px 0;
+  color: #fff;
+  cursor: pointer;
+  background: #54acbf;
+  font-family: "Funnel Display", sans-serif;
+  transition: 0.2s ease;
+}
+
+.box :where(.forget-password, .policy-text) {
+  display: inline-flex;
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.box .bottom-link {
+  text-align: center;
+}
+
+form button:hover {
+  background: #54acbf;
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.toggle-password{
+  cursor: pointer;
+}
+
+/* Sign in */
+.sign-in .form-details {
+  background: url(../Asset/sign-in.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.sign-in .policy-text {
+  display: flex;
+  align-items: center;
+}
+
+.sign-in .policy-text input {
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+}
+
+.wrapper .sign-in {
+  display: none;
+}
+
+.wrapper.show-signup .box {
+  display: none;
+}
+
+.wrapper.show-signup .sign-in {
+  display: flex;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  .box .form-details {
+    display: none;
+  }
+
+  .box .form-content {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .navbar :is(.menu, .nav-links .close) {
+    display: block;
+  }
+}

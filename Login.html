@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeClass Planner </title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Form  Login in-->
+
+    <div class="wrapper">
+      <a href="index.html" class="exit"><i class="fa-solid fa-x"></i></a>
+      <div class="box">
+        <div class="form-details">
+          <h2>Welcome Back to LifeCLassPlanner!</h2>
+          <p>
+            Login to access your planner and stay on track with your academic
+            tasks.
+          </p>
+        </div>
+        <div class="form-content">
+          <h2>Login</h2>
+          <form action="">
+            <div class="input-field">
+              <input type="email" name="email" id="email" placeholder="" />
+              <label for="email">Email Address:</label>
+              <i class="fa-solid fa-envelope toggle-password"></i>
+            </div>
+
+            <div class="input-field">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                required
+                placeholder=""
+              />
+              <label for="password" class="first">Password:</label>
+              <i class="fa-solid fa-eye toggle-password"></i>
+            </div>
+
+            <a href="" class="forget-password">Forget Password?</a>
+            <button type="submit">Log in</button>
+          </form>
+
+          <div class="bottom-link">
+            Don't have an account?
+            <a href="" id="sign-up-link">Sign up</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign in -->
+      <div class="box sign-in">
+        <div class="form-details">
+          <h2>Welcome To LifeClassPlanner!</h2>
+          <p>
+            Let's setup Your Account to Start Organizing Your Life, One Step At
+            A Time.
+          </p>
+        </div>
+        <div class="form-content">
+          <h2>Create Your Account</h2>
+
+          <form action="">
+            <div class="input-field">
+              <input
+                type="text"
+                name="text-sign"
+                id="text-sign"
+                placeholder=""
+              />
+              <label for="text-sign">Full Name:</label>
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="input-field">
+              <input type="email" name="email" id="email-sign" placeholder="" />
+              <label for="email-sign">Email Address:</label>
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="input-field">
+              <input
+                type="password"
+                name="password"
+                id="password-sign"
+                required
+                placeholder=""
+              />
+              <label for="password-sign">Password:</label>
+              <i class="fa-solid fa-eye toggle-password"></i>
+            </div>
+
+            <div class="policy-text">
+              <input type="checkbox" id="policy" />
+              <label for="policy">
+                I agree the
+                <a href="">Terms & Conditions</a>
+              </label>
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+
+          <div class="bottom-link">
+            Already have an account?
+            <a href="" id="login-link">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/login.js" defer></script>
+  </body>
+</html>

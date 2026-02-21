@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeClass Planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
+  <script src="js/calendar.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>LifeClass Planner</h2>
+  <ul>
+    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+    <li><a href="tasks.html" class="active"><i class="fa-solid fa-list-check"></i>Task List</a></li>
+    <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
+    <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i>Progress</a></li>
+    <li><a href="profile.html"><i class="fa-solid fa-circle-user"></i>Profile</a></li>
+    <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+  </ul>
+</div>
+
+<div class="main">
+  <div class="container">
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <h1>My Tasks</h1>
+
+    <!-- Add Task Form -->
+    <div class="card">
+      <h3>Create New Task</h3>
+      <form id="addTaskForm" style="display: grid; gap: 10px;">
+        <input type="text" id="taskTitle" placeholder="Task title" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+        <textarea id="taskDescription" placeholder="Task description" style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; min-height: 80px;"></textarea>
+        <input type="date" id="taskDueDate" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+        <button type="submit" style="padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Add Task</button>
+      </form>
+    </div>
+
+    <!-- Task List Container -->
+    <div id="taskListContainer"></div>
+  </div>
+</div>
+
+<script>
+  // Handle add task form
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("addTaskForm");
+    // Ensure task list is rendered when page loads
+    if (typeof renderTaskList === 'function') renderTaskList();
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById("taskTitle").value.trim();
+      const description = document.getElementById("taskDescription").value;
+      const dueDate = document.getElementById("taskDueDate").value;
+
+      if (title && dueDate) {
+        addTask(title, description, dueDate);
+        form.reset();
+
+        // Re-render the task list so the new task appears immediately
+        if (typeof renderTaskList === 'function') renderTaskList();
+
+        // Show success message
+        const submitBtn = form.querySelector("button");
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Task Added!";
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+        }, 2000);
+      }
+    });
+
+    // Keep the list in sync when tasks are changed elsewhere
+    window.addEventListener('taskAdded', () => { if (typeof renderTaskList === 'function') renderTaskList(); });
+    window.addEventListener('taskUpdated', () => { if (typeof renderTaskList === 'function') renderTaskList(); });
+    window.addEventListener('taskDeleted', () => { if (typeof renderTaskList === 'function') renderTaskList(); });
+  });
+</script>
+<script src="js/logout.js"></script>
+<script>
+function toggleSidebar() {
+  document.querySelector(".sidebar").classList.toggle("active");
+}
+</script>
+</body>
+</html>

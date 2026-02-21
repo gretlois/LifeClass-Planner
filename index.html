@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeCLass Planner</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+    <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container" id="header">
+      <div class="container">
+        <nav>
+          <a href="" class="logo">LifeClassPlanner</a>
+          <ul class="nav-list">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Planner">Planner</a></li>
+            <li><a href="#Dashboard">Dashboard</a></li>
+            <li><a href="#About">About</a></li>
+            <li>
+              <a href="Login.html" class="btn login-btn">Log In</a>
+            </li>
+            <li>
+              <a href="Login.html?mode=signup" class="btn sign-btn">Sign Up</a>
+            </li>
+          </ul>
+          <img src="Asset/menu.png" alt="hamburger" class="menu-btn" />
+        </nav>
+      </div>
+
+      <!-- Home -->
+      <section id="Home">
+        <div class="main-content">
+          <h1 class="intro-heading">Stay On Track. Never Miss a Deadline.</h1>
+          <p>
+            A simple student planner that helps you manage tasks, track,
+            deadlines, and organize your academic life - all in one place.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Planner -->
+    <section id="Planner">
+      <div class="container">
+        <div class="section-title">
+          <h2>Everything You Need to Stay Organized</h2>
+          <div class="line"></div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <img src="Asset/card1.jpg" alt="task manager" />
+            <h3>Task Manager</h3>
+            <p>
+              Create task lists, set priorities, and check things off as you ago
+            </p>
+          </div>
+
+          <div class="content">
+            <img src="Asset/card2.avif" alt="Calendar & Deadlines" />
+            <h3>Calendar & Deadlines</h3>
+            <p>
+              View your schedules, exams, and submissions in one clean calendar
+            </p>
+          </div>
+
+          <div class="content">
+            <img src="Asset/card3.jpg" alt="Progress Tracker" />
+            <h3>Progress Tracker</h3>
+            <p>
+              Monitor your productivity and see how much you've accomplished
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DashBoard Example -->
+    <section id="Dashboard">
+      <div class="section-title">
+        <h2>DashBoard</h2>
+        <div class="line"></div>
+      </div>
+      <div class="dashboard">
+        <img src="Asset/dashboard.png" alt="Example DashBoard" />
+        <div class="subtitle">
+          <h2>"Your planner at a glance"</h2>
+        </div>
+        <a href="Login.html?mode=signup" class="btn-create">Create Account</a>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+    <section id="About">
+      <div class="wrapper">
+        <h4>&copy; 2026 LifeClass Planner| Academic Project by PlanForge</h4>
+      </div>
+    </section>  
+    </footer>
+
+
+    <script src="js/home.js"></script>
+    <script>
+      function toggleSidebar() {
+        document.querySelector(".sidebar").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

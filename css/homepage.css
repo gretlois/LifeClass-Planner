@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --First-color: #a7ebf2;
+  --Second-color: #54acbf;
+  --Third-color: #26658c;
+  --Fourth-color: #023858;
+  --Fifth-color: #011c40;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+li {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Funnel Display", sans-serif;
+  background-color: #fff;
+}
+
+section {
+  margin: 80px auto;
+}
+
+/* Header */
+#header {
+  background-image: url(../Asset/hero-img.jpg);
+  min-height: 100vh;
+  background-position: bottom center;
+  background-size: cover;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 2000px;
+  padding: 16px;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+.sign-btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: var(--Fourth-color);
+  border-radius: 6px;
+  border: 2px solid var(--First-color);
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.1 ease;
+ 
+}
+
+.login-btn {
+  padding: 10px 20px;
+  background-color: var(--Fourth-color);
+  color: #efefef;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.1 ease;
+  border: 2px solid var(--First-color);
+}
+
+li a:hover {
+  color: var(--Fourth-color);
+}
+
+.sign-btn:hover {
+  background-color: var(--Fourth-color);
+  color: #efefef;
+}
+
+.login-btn:hover {
+  background-color: #efefef;
+  color: var(--Fourth-color);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  display: none;
+}
+
+/* Home */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.main-content .intro-heading {
+  padding-top: 20vh;
+  font-size: 50px;
+}
+
+.main-content p {
+  font-size: 18px;
+}
+
+/* Planner */
+.section-title h2 {
+  font-size: 35px;
+  text-align: center;
+}
+
+.section-title .line {
+  width: 100px;
+  height: 4px;
+  border: 10px;
+  background: var(--Fifth-color);
+  margin: auto;
+}
+
+.card {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.content {
+  width: 350px;
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* Dash Example */
+#Dashboard {
+  padding: 40px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dashboard img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin-top: 10px;
+}
+
+.btn-create {
+  color: #efefef;
+  padding: 14px 20px;
+  background-color: var(--Second-color);
+  border: none;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  margin-top: 10px;
+}
+
+.dashboard img:hover {
+  transform: scale(1.02);
+}
+
+.btn-create:hover {
+  background-color: var(--First-color);
+  color: var(--Second-color);
+}
+
+/* Footer */
+footer {
+  background-color: var(--First-color);
+}
+
+footer .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  /* NavBar */
+  .nav-list {
+    flex-direction: column;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    right: -900px;
+    width: 80%;
+    height: 100vh;
+    padding-top: 80px;
+    transition: all 0.3s;
+  }
+
+  .nav-list li:nth-child(-n + 3) {
+    text-align: left;
+    width: 100%;
+    padding: 10px 30px;
+    border-bottom: 1px solid #efefefef;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-list.active {
+    right: 0;
+  }
+}

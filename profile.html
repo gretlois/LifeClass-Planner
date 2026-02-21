@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeClass Planner</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
+    <script src="js/profile.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>LifeClass Planner</h2>
+      <ul>
+            <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i>Task List</a></li>
+            <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
+            <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i>Progress</a></li>
+            <li><a href="profile.html" class="active"><i class="fa-solid fa-circle-user"></i>Profile</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+      <div class="profile-header"></div>
+
+      <div class="profile-top">
+        <div class="avatar" aria-hidden="true"></div>
+        <h2 id="displayName">Your Name</h2>
+      </div>
+
+      <div class="profile-box">
+        <div class="card profile-card">
+          <h3>Basic Information</h3>
+          <div class="profile-fields">
+            <p><strong>Full Name:</strong> <span id="nameField">Student Name</span></p>
+            <p><strong>Year &amp; Course:</strong> <span id="yearField">Enter Your Year &amp; Course</span></p>
+            <p><strong>Email Address:</strong> <span id="emailField">student@email.com</span></p>
+          </div>
+
+          <div class="right">
+            <button id="editBtn">Edit Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function toggleSidebar() {
+      document.querySelector(".sidebar").classList.toggle("active");
+    }
+  </script>
+</html>

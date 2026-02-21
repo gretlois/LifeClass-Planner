@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeClass Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>LifeClass Planner</h2>
+        <ul>
+            <li><a href="dashboard.html" class="active"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i>Task List</a></li>
+            <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
+            <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i>Progress</a></li>
+            <li><a href="profile.html"><i class="fa-solid fa-circle-user"></i>Profile</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="top-bar">
+        <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="main">
+        <h1>Welcome Back 👋</h1>
+
+        <div class="container">
+            <div class="dashboard-grid">
+
+                <!-- TODAY'S TASKS -->
+                <div class="card dashboard-card">
+                    <h3>Today's Tasks</h3>
+                    <ul class="task-list">
+
+                    </ul>
+                </div>
+
+                <!-- UPCOMING DEADLINES -->
+                <div class="card dashboard-card">
+                    <h3>Upcoming Deadlines</h3>
+                    <ul class="deadline-list">
+
+                    </ul>
+                </div>
+
+                <!-- PROGRESS BAR -->
+                <div class="card dashboard-card progress-card">
+                    <h3>Overall Progress</h3>
+
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <p class="progress-text">75% Completed</p>
+                </div>
+
+            </div>
+        </div>  
+        <script src="js/dashboard.js"></script>
+        <script src="js/logout.js"></script>
+        <script>
+            function toggleSidebar() {
+                document.querySelector(".sidebar").classList.toggle("active");
+            }
+        </script>
+</body>
+
+</html>

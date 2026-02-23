@@ -39,8 +39,10 @@ body {
 .sidebar ul li a {
     text-decoration: none;
     color: white;
-    display: block;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 18px;
     border-radius: 8px;
     transition: 0.3s;
 }
@@ -591,6 +593,32 @@ button:hover {
     margin-right: 10px;
 }
 
+.card h2 {
+    margin-bottom: 5px;
+}
+
+.card button {
+    margin-right: 10px;
+}
+
+/* BUTTON GROUP FOR MOBILE */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.period-btn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.period-btn.active {
+    background: #3b82f6;
+    color: white;
+}
 
 /* HAMBURGER BUTTON */
 .hamburger {
@@ -672,8 +700,187 @@ button:hover {
         padding: 10px;
     }
 
+    /* PROGRESS PAGE MOBILE */
+    .container {
+        padding: 0 10px;
+    }
+
+    .card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .card h1,
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+
+    .period-btn,
+    .view-btn,
+    button {
+        padding: 10px 16px;
+        font-size: 14px;
+        min-height: 44px;
+        border-radius: 6px;
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .progress-bar {
+        height: 30px;
+        margin-top: 12px;
+    }
+
+    .progress-fill {
+        line-height: 30px;
+        font-size: 14px;
+    }
+
+    .progress-text {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    /* DATE GRID MOBILE */
+    .dates {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .date-box {
+        padding: 8px;
+        font-size: 14px;
+        min-height: auto;
+    }
+
+    .date-box div {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+    /* TASK ROW MOBILE */
+    .progress-task {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .progress-task div:first-child {
+        width: 100%;
+    }
+
+    .progress-task div:last-child {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+    }
+
+    .progress-task button {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+
+    /* MINI CALENDAR MOBILE */
+    #miniCalendarGrid {
+        grid-template-columns: repeat(7, 1fr) !important;
+        gap: 4px !important;
+    }
+
+    .date-box {
+        padding: 6px !important;
+        font-size: 13px !important;
+    }
+
+    #dateTasks {
+        margin-top: 12px;
+        overflow-y: auto;
+        max-height: 300px;
+    }
+
+    #dateTasks h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
 
 }
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 200px;
+        left: -200px;
+    }
+
+    .main {
+        padding-top: 50px;
+    }
+
+    .main h1 {
+        font-size: 20px;
+        padding: 10px 5px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .card h2,
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .button-group {
+        gap: 6px;
+    }
+
+    .period-btn,
+    button {
+        padding: 8px 12px;
+        font-size: 13px;
+        min-height: 40px;
+    }
+
+    .progress-bar {
+        height: 28px;
+    }
+
+    .progress-fill {
+        line-height: 28px;
+        font-size: 12px;
+    }
+
+    .dates {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+    }
+
+    .date-box {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .progress-task button {
+        padding: 6px 8px;
+        font-size: 11px;
+        min-height: 36px;
+    }
+
+    #dateTasks {
+        max-height: 250px;
+    }
+}
+
 
     /* Icon spacing */
     .sidebar a i {
@@ -681,3 +888,38 @@ button:hover {
         min-width: 20px;
         text-align: center;
     }
+
+/* Responsive: keep calendar nav buttons from overlapping screen corners */
+@media (max-width: 600px) {
+    .calendar-card {
+        padding: 12px;
+    }
+
+    .calendar-header {
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .calendar-header select {
+        flex: 1 1 auto;
+        margin: 0 8px;
+        min-width: 0;
+    }
+
+    /* Ensure month + year are visible on narrow screens */
+    .calendar-header select {
+        font-size: 13px;
+        padding: 6px 8px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-btn {
+        padding: 8px 10px;
+        flex: 0 0 auto;
+        border-radius: 6px;
+    }
+}

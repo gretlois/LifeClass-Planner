@@ -159,6 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btnWeekly.addEventListener("click", () => {
       const progress = calculateWeeklyProgress(userId, new Date());
       updateProgressDisplay(progress, "Weekly");
+      btnWeekly.classList.add('active');
+      btnMonthly.classList.remove('active');
       btnWeekly.style.backgroundColor = "#3b82f6";
       btnWeekly.style.color = "white";
       btnMonthly.style.backgroundColor = "";
@@ -170,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btnMonthly.addEventListener("click", () => {
       const progress = calculateMonthlyProgress(userId, new Date());
       updateProgressDisplay(progress, "Monthly");
+      btnMonthly.classList.add('active');
+      btnWeekly.classList.remove('active');
       btnMonthly.style.backgroundColor = "#3b82f6";
       btnMonthly.style.color = "white";
       btnWeekly.style.backgroundColor = "";

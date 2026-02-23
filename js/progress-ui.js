@@ -3,30 +3,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Mobile sidebar toggle
-  const sidebarToggle = document.getElementById('sidebarToggle');
-  const sidebar = document.getElementById('sidebar');
-  
-  if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener('click', function() {
-      sidebar.classList.toggle('active');
-    });
-
-    // Close sidebar when a link is clicked
-    const sidebarLinks = sidebar.querySelectorAll('a');
-    sidebarLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        sidebar.classList.remove('active');
-      });
-    });
-
-    // Close sidebar when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-        sidebar.classList.remove('active');
-      }
-    });
-  }
   // Extract stable user id from currentUser object; fall back to email or raw string
   let currentUser = 'default_user';
   if (typeof getCurrentUser === 'function') {
@@ -183,8 +159,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnMonthly = document.getElementById('btnMonthly');
 
   function setActive(btnA, btnB) {
-    if (btnA) btnA.classList.add('active');
-    if (btnB) btnB.classList.remove('active');
+    if (btnA) {
+      btnA.classList.add('active');
+      btnA.style.backgroundColor = '#3b82f6';
+      btnA.style.color = 'white';
+    }
+    if (btnB) {
+      btnB.classList.remove('active');
+      btnB.style.backgroundColor = '';
+      btnB.style.color = '';
+    }
   }
 
   function showWeeklyView() { renderWeekly(); setActive(btnWeekly, btnMonthly); }

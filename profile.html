@@ -1,25 +1,29 @@
 <!doctype html>
 <html>
   <head>
-    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeClass Planner</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
     <script src="js/profile.js"></script>
   </head>
   <body>
     <div class="sidebar">
       <h2>LifeClass Planner</h2>
       <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="tasks.html">Task List</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="progress.html">Progress</a></li>
-        <li><a href="profile.html" class="active">Profile</a></li>
-        <li><a href="Login Page/Login.html">Logout</a></li>
+            <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+            <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i>Task List</a></li>
+            <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
+            <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i>Progress</a></li>
+            <li><a href="profile.html" class="active"><i class="fa-solid fa-circle-user"></i>Profile</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
       </ul>
     </div>
 
     <div class="main">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
       <div class="profile-header"></div>
 
       <div class="profile-top">
@@ -43,4 +47,9 @@
       </div>
     </div>
   </body>
+  <script>
+    function toggleSidebar() {
+      document.querySelector(".sidebar").classList.toggle("active");
+    }
+  </script>
 </html>

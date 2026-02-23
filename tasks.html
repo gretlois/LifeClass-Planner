@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LifeClass Planner</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Task List</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
   <script src="js/calendar.js"></script>
 </head>
 <body>
@@ -14,34 +10,32 @@
 <div class="sidebar">
   <h2>LifeClass Planner</h2>
   <ul>
-    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
-    <li><a href="tasks.html" class="active"><i class="fa-solid fa-list-check"></i>Task List</a></li>
-    <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
-    <li><a href="progress.html"><i class="fa-solid fa-bars-progress"></i>Progress</a></li>
-    <li><a href="profile.html"><i class="fa-solid fa-circle-user"></i>Profile</a></li>
-    <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="tasks.html" class="active">Task List</a></li>
+    <li><a href="calendar.html">Calendar</a></li>
+    <li><a href="progress.html">Progress</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="Login Page/Login.html">Logout</a></li>
   </ul>
 </div>
 
 <div class="main">
-  <div class="container">
-    <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    <h1>My Tasks</h1>
+  <h1>My Tasks</h1>
 
-    <!-- Add Task Form -->
-    <div class="card">
-      <h3>Create New Task</h3>
-      <form id="addTaskForm" style="display: grid; gap: 10px;">
-        <input type="text" id="taskTitle" placeholder="Task title" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
-        <textarea id="taskDescription" placeholder="Task description" style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; min-height: 80px;"></textarea>
-        <input type="date" id="taskDueDate" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
-        <button type="submit" style="padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Add Task</button>
-      </form>
-    </div>
-
-    <!-- Task List Container -->
-    <div id="taskListContainer"></div>
+  <!-- Add Task Form -->
+  <div class="card">
+    <h3>Create New Task</h3>
+    <form id="addTaskForm" style="display: grid; gap: 10px;">
+      <input type="text" id="taskTitle" placeholder="Task title" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+      <textarea id="taskDescription" placeholder="Task description" style="padding: 10px; border: 1px solid #ddd; border-radius: 6px; min-height: 80px;"></textarea>
+      <input type="date" id="taskDueDate" required style="padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+      <button type="submit" style="padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Add Task</button>
+    </form>
   </div>
+
+  <!-- Task List Container -->
+  <div id="taskListContainer"></div>
+
 </div>
 
 <script>
@@ -82,10 +76,5 @@
   });
 </script>
 <script src="js/logout.js"></script>
-<script>
-function toggleSidebar() {
-  document.querySelector(".sidebar").classList.toggle("active");
-}
-</script>
 </body>
 </html>

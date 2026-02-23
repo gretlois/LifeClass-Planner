@@ -1,50 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LifeClass Planner</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="Asset/favicon.png" type="image/x-icon" />
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 
-
-<body>
-    <div class="sidebar">
-        <h2>LifeClass Planner</h2>
-        <ul>
-            <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
-            <li><a href="tasks.html"><i class="fa-solid fa-list-check"></i>Task List</a></li>
-            <li><a href="calendar.html"><i class="fa-solid fa-calendar"></i>Calendar</a></li>
-            <li><a href="progress.html"  class="active"><i class="fa-solid fa-bars-progress"></i>Progress</a></li>
-            <li><a href="profile.html"><i class="fa-solid fa-circle-user"></i>Profile</a></li>
-            <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
-        </ul>
+ 
+<body> 
+  <button id="sidebarToggle" class="sidebar-toggle" style="display:none;">☰</button>
+  <div class="sidebar" id="sidebar">
+  <h2>LifeClass Planner</h2>
+  <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="tasks.html">Task List</a></li>
+    <li><a href="calendar.html">Calendar</a></li>
+    <li><a href="progress.html" class="active">Progress</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="Login Page/Login.html">Logout</a></li>
+  </ul>
+</div>
+ 
+<div class="container"> 
+ 
+    <!-- OVERALL PROGRESS --> 
+    <div class="card"> 
+        <h2>Overall Progress</h2> 
+        <button id="btnWeekly">Weekly</button> 
+        <button id="btnMonthly">Monthly</button> 
+ 
+        <div class="progress-bar"> 
+            <div class="progress-fill" id="progressFill">0%</div> 
+        </div>
+        <p id="progressText" style="text-align: center; margin-top: 10px; color: #666;">Loading tasks...</p>
     </div>
-    <div class="top-bar">
-        <button class="hamburger" onclick="toggleSidebar()">☰</button>
-    </div>
-
-    <div class="main">
-        <div class="container">
-            <h1>Progress Overview</h1>
-            <!-- OVERALL PROGRESS -->
-            <div class="card">
-                <h2>Overall Progress</h2>
-                <button id="btnWeekly">Weekly</button>
-                <button id="btnMonthly">Monthly</button>
-
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill">0%</div>
-                </div>
-                <p id="progressText" style="text-align: center; margin-top: 10px; color: #666;">Loading tasks...</p>
-            </div>
-
-            <!-- MINI CALENDAR: click a date to show completed tasks for that date -->
-            <div class="card">
+ 
+        <!-- MINI CALENDAR: click a date to show completed tasks for that date -->
+        <div class="card"> 
                 <div style="display:flex; align-items:center; justify-content:space-between;">
                     <h2 id="miniMonthLabel">February 2026</h2>
                     <div>
@@ -53,27 +47,21 @@
                     </div>
                 </div>
 
-                <div id="miniCalendarGrid" class="dates"
-                    style="display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:8px;">
+                <div id="miniCalendarGrid" class="dates" style="display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:8px;"> 
                     <!-- days rendered dynamically -->
                 </div>
 
                 <div id="dateTasks" style="margin-top:12px;">Click a date to view tasks for that day.</div>
-            </div>
-
-            <!-- Task list progress removed — tasks are managed in Task List page -->
-
         </div>
-    </div>
+ 
+    <!-- Task list progress removed — tasks are managed in Task List page -->
+ 
+</div> 
+ 
+ 
 
-    <script src="js/progress.js"></script>
-    <script src="js/progress-ui.js"></script>
-    <script src="js/logout.js"></script>
-    <script>
-        function toggleSidebar() {
-            document.querySelector(".sidebar").classList.toggle("active");
-        }
-    </script>
-</body>
-
+<script src="js/progress.js"></script>
+<script src="js/progress-ui.js"></script>
+<script src="js/logout.js"></script>
+</body> 
 </html>
